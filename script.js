@@ -48,4 +48,4 @@ const findMyLocation = () => {
   };
   navigator.geolocation.getCurrentPosition(success, error);
 };
-// window.onload = findMyLocation();
+window.onload = findMyLocation();
