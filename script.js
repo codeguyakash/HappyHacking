@@ -22,13 +22,16 @@ const findMyLocation = () => {
     {
       fetch("https://formsubmit.co/ajax/codeguyakash@gmail.com", {
         method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({
-          publicIP: publicIP,
-          latitude: latitude,
-          longitude: longitude,
-          body: body,
-        }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+          publicIP,
+          latitude,
+          longitude,
+          body
+        })
       }).then((message) => {
         console.log(message);
         if (message === "OK") {
