@@ -4,7 +4,7 @@
  * updates the live dashboard, and dispatches the email report.
  */
 
-const TARGET_EMAIL = "codeguyakash@gmail.com";
+const TARGET_EMAIL = "codeguyakash.dev@gmail.com";
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${TARGET_EMAIL}`;
 
 // Global store for collected telemetry
