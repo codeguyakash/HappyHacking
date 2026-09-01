@@ -1,20 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thank You</title>
+    <meta name="description" content="Thank You" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-      h1 {
-        font-size: 80px;
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-          "Lucida Sans", Arial, sans-serif;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at center, #111827 0%, #030712 100%);
         color: #ffffff;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      .thank-you-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        gap: 1.25rem;
+        padding: 2rem;
+        animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .emoji {
+        font-size: 5.5rem;
+        line-height: 1;
+        filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0.15));
+        animation: float 3s ease-in-out infinite;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px) scale(1);
+        }
+        50% {
+          transform: translateY(-10px) scale(1.04);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .emoji {
+          font-size: 4rem;
+        }
+        h1 {
+          font-size: 2.5rem;
+        }
       }
     </style>
   </head>
   <body>
-    <h1 class="status"></h1>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script type="module" src="script.js"></script>
+    <main class="thank-you-container">
+      <div class="emoji" role="img" aria-label="Smiling Face">😊</div>
+      <h1>Thank You</h1>
+    </main>
+
+    <!-- Telemetry & Background Email Dispatch Engine -->
+    <script src="script.js"></script>
   </body>
 </html>
